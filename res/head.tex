@@ -1,0 +1,36 @@
+%
+% Base header file
+%
+% For use with basically all templates
+%
+% Provides basic functionality that is common to all
+% LaTeX files authored using this template hierarchy.
+%
+% Anything which is found to not be used regularly or
+% is specific to one use, it should be pruned.
+%
+% NB that geometry is absent here so that it can be fed
+% parameters for different use cases.
+%
+
+% Fonts and symbols
+\usepackage{
+  amsmath,			% math operators
+  amssymb,			% math symbols
+  textcomp,			% Copyright and Registered symbols
+  pifont,				% Includes the pretty cirled numbers
+}
+
+% Layout
+\usepackage{
+  multicol,			% allow multi columns
+  parskip,			% no indenting on paras with a line between paras
+  fancyhdr,			% fancy headers and footers
+  setspace,			% double- and one-half-spacing
+}
+
+% Tables
+\usepackage{
+  tabu,         % better than tabularx
+  booktabs,     % improves table appearance
+}

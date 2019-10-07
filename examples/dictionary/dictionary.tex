@@ -1,0 +1,29 @@
+\documentclass[10pt]{article}
+\input{res/head}
+\input{res/langhead}
+
+\begin{document}
+\pagenumbering{roman}		% turn off page numbering
+
+% Title page
+\firstpage{Dicti\=on\=arivm Gallovidi\=i Lingvae Lat\=inae}{A concise Latin dictionary for English-speakers}{I\=acomvs G\=allov\=idivs Septimvs}
+
+% Table of contents
+\newpage
+\tableofcontents
+
+\pagenumbering{arabic}
+
+% Include sections
+
+\newpage\input{sections/conjugations}
+\newpage\input{sections/verbs}
+
+\newpage\input{sections/declensions}
+\newpage\input{sections/nouns}
+\newpage\input{sections/adjectives}
+
+\newpage\input{sections/adverbs}
+\newpage\input{sections/prepositions}
+
+\end{document}

@@ -1,0 +1,97 @@
+%
+% Language- and linguistic-related table file
+%
+% Provides tables for language assignments and presentations
+% 
+% Included in langhead.tex
+%
+% verbchart{<verb>}{<tense>}{<voice>}{<mood>}
+%   -> This environment will set up a verb chart for conjugating
+%      a noun; all args mandatory
+%
+% nounchart{<noun>}{<gender>}{<declension>}
+%   -> This environment sets up a noun chart for declining
+%      a noun (or an adjective, I suppose); all args 
+%      mandatory (NEEDS CHANGING)
+%
+% nounphrasechart{<noun>}{<gender>}{<noun declension>}{<adjective>}{<adj declension>}
+%   -> This environment sets up a chart for declining a noun
+%      and an adjective together as a phrase; all args
+%      mandatory (ALSO NEEDS CHANGING)
+
+% Environments
+\NewEnviron{refchart}{
+  \begin{center}
+    \renewcommand{\arraystretch}{2}
+    \taburowcolors 2{black!10 .. white}
+    \begin{tabu}to \linewidth {lX[r]}
+      \BODY
+    \end{tabu}
+  \end{center}
+}
+
+\NewEnviron{verbchart}[4]{
+  \begin{center}
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabu}to \textwidth {X[l]X[0.7,c]X[0.8,c]X[0.6,r]}
+    \textit{{#1}} & \textbf{Tense:} {#2} & \textbf{Mood:} {#4} & \textbf{Voice:} {#3} \\ 
+  \end{tabu}
+  \end{center}
+
+  \vspace{-1em}
+  \begin{center}
+  \textsf{
+    \begin{tabu}to \textwidth {|X[c]|X[2.5,l]|X[2.5,l]|}
+      \hline
+      & \textbf{Singular} & \textbf{Plural} \\
+      \hline
+      \BODY
+    \end{tabu}
+    \vspace{3em}
+  }
+  \end{center}
+  }
+
+  \NewEnviron{nounchart}[3]{
+    \begin{center}
+      \setlength{\tabcolsep}{4pt}
+      \begin{tabu} to \textwidth {X[1.1,l]X[r]}
+        \textit{{#1}},  {#2}. & {#3} declension \\ 
+      \end{tabu}
+    \end{center}
+
+    \vspace{-1em}
+    \begin{center}
+    \textsf{
+      \begin{tabu}to \textwidth {|X[c]|X[1.2,l]|X[1.2,l]|}
+        \hline
+        & \textbf{Singular} & \textbf{Plural} \\
+        \hline
+        \BODY
+      \end{tabu} 
+      \vspace{3em}
+    }
+    \end{center}
+  }
+
+  \NewEnviron{nounphrase}[5]{
+    \begin{center}
+      \setlength{\tabcolsep}{4pt}
+      \begin{tabu} to \textwidth {X[1.2,l]X[c]X[1.2,c]X[r]}
+        \textit{{#1}},  {#2}. & {#3} declension & \textit{{#4}} & {#5} declension \\ 
+      \end{tabu}
+    \end{center}
+
+        \vspace{-1em}
+    \begin{center}
+      \textsf{
+        \begin{tabu} to \textwidth {|X[c]|X[1.2,l]|X[1.2,l]|}
+          \hline
+          \hfill & \textbf{Singular} & \textbf{Plural} \\
+          \hline
+          \BODY
+        \end{tabu}
+        \vspace{3em}
+      }
+    \end{center}
+  }

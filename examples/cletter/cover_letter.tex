@@ -1,0 +1,56 @@
+\documentclass[10pt]{memoir}
+\input{res/head}
+\input{res/letterhead}
+\usepackage{lipsum} % Illustration purposes only; dd here
+
+% Fill out the following fields:
+
+% Recipient info
+\newcommand{\recipient}{Recipient}
+\newcommand{\company}{Company}
+
+% Your info
+\newcommand{\sender}{Sender}
+\newcommand{\street}{Street Address}
+\newcommand{\city}{City}
+\newcommand{\locality}{Locality F4G 3M0}
+\newcommand{\country}{Canada}
+\newcommand{\phone}{778 778 7788}
+\newcommand{\email}{email$@$example.org}
+
+% Job info
+\newcommand{\position}{up for grabs}
+\newcommand{\source}{job posting source dot com}
+\newcommand{\workingfield}{technical working field}
+
+% Your skills
+\newcommand{\perks}{a smart cookie and a nifty potato also}
+\newcommand{\courses}{cryptography, security engineering, and advanced C++ programming}
+\newcommand{\experience}{prototyping embedded systems}
+\newcommand{\proglangs}{C, C++, Java, Python, and shell scripting for both UNIX/Linux and Windows platforms}
+
+\color{grey}
+\begin{document}
+\pagenumbering{gobble}		% turn off page numbering
+\address{}
+\opening{}
+
+  I am writing to express my interest in the \position{} 
+  position at \company{}\postingsource{}.  I am keenly 
+  interested in \workingfield{} and thus am intrigued by 
+  \company{}'s mission. I am confident that my expertise in, 
+  and skills pertinent to \workingfield{}, as well as my 
+  breadth of experience working under tight-schedules in 
+  mission-critical environments will be of use to \company{}.
+
+  \textit{Talk yourself up for a paragraph.}
+  \lipsum[8]
+
+  During my degree program, I completed courses which are 
+  pertinent to \company{}'s mission, including courses in
+  \courses{}. I have experience \experience{}, and agile 
+  development experience in \proglangs{}.  Furthermore, I am 
+  \perks{}.
+  
+\closing{}
+\end{document}

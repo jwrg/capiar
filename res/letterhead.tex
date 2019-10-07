@@ -1,0 +1,27 @@
+%
+% Letter-writing header file
+%
+% For use when writing letters
+%
+
+% Includes
+\input{res/style/colour}
+\input{res/style/font}
+\input{res/macro/letter}
+\input{res/macro/cletter}
+
+% Overrides
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+\linespread{1.1}
+
+\usepackage{
+  geometry,       % set dimensions
+  etoolbox,       % helper commands (ifdefempty)
+}
+
+% Dimensions
+\geometry{				% specify page size options for (geometry)
+	letterpaper,		% paper size
+	margin=2cm,			% specified independently with hmargin vmargin
+}	

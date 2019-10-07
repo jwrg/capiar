@@ -1,0 +1,117 @@
+\documentclass[10pt]{article}
+\input{res/head}
+\input{res/resumehead}
+\usepackage{lipsum} % Illustration purposes only; dd here
+
+\color{grey}
+\begin{document}
+
+\titletable{First I. Last}
+{00-0000 Street St., City PV}
+{e@mail.com}
+{000 000 0000 ext. 0000}
+
+\vspace{1em}
+
+\begin{featurechart}{Education}
+  Bachelor of Engineering & September 0000 -- August 0000 \\   
+  \textcolor{pink}{University of Example} & \textcolor{pink}{Example, PV}
+\end{featurechart}
+
+\begin{outlinechart}{Technical Skills}
+  Programming Languages&
+  \lipsum[2][1-2] \\
+
+  Computer Hardware&
+  \lipsum[2][3-4] \\
+
+  Software&
+  \lipsum[2][5-6] \LaTeX --- \lipsum[2][7] \\
+
+  Professional Experience&
+  \lipsum[2][8-12] \\
+
+\end{outlinechart}
+%\vspace{-1em}
+
+\begin{outlinechart}{Transferable Skills}
+  Teamwork&
+  \lipsum[4][1-7] \\
+
+  Computing Experience&
+  \lipsum[4][8-14] \\
+
+  Conscientiousness&
+  \lipsum[6][1-5] \\
+
+\end{outlinechart}   
+
+\actionheaderdub{Work Experience}
+{Position}
+{Time during which position was held}
+{Other Position}
+{Time during which other position held}
+{Company}
+{Location(s)}
+\begin{tabu}to \textwidth {lX}
+  \bullet & \lipsum[3][1-3]\\
+  \bullet & \lipsum[3][4-8]\\
+  \bullet & \lipsum[3][9-13]\\
+  \bullet & \lipsum[5][1-4]
+\end{tabu}
+\newpage
+\actionhead
+{Position}
+{Time during which position was held}
+{Company}
+{Location(s)}
+\begin{tabu}to \textwidth {lX}
+  \bullet & \lipsum[4][1-6]\\
+  \bullet & \lipsum[4][6-9]\\
+  \bullet & \lipsum[4][10-14]\\
+  \bullet & \lipsum[5][5-8]\\
+  & 
+\end{tabu}
+
+\actionhead
+{Position}
+{Time during which position was held}
+{Company}
+{Location(s)}
+\begin{tabu}to \textwidth {lX}
+  \bullet & \lipsum[4][1-6]\\
+  \bullet & \lipsum[4][6-9]\\
+  \bullet & \lipsum[4][10-14]\\
+  \bullet & \lipsum[5][5-8]\\
+  & 
+\end{tabu}
+
+\begin{tabu}to \textwidth {X}       
+  \textcolor{purple}{\sffamily \bfseries  Personal } \\
+  Projects
+\end{tabu}
+\begin{tabu}to \textwidth {lX}
+  \bullet & \lipsum[8][1]\\
+  \bullet & \lipsum[8][2-3]\\
+  \bullet & \lipsum[8][4]\\
+  \bullet & \lipsum[8][5-6]\\
+  \bullet & \lipsum[8][7]\\
+  & 
+\end{tabu} 
+
+\begin{tabu}to \textwidth {X}       
+  Activities \& Interests
+\end{tabu}
+\begin{tabu}to \textwidth {lX}
+  \bullet & \lipsum[7][1]\\
+  \bullet & \lipsum[7][2]\\
+  \bullet & \lipsum[7][3]\\
+  \bullet & \lipsum[7][4]\\
+  \bullet & \lipsum[7][5]\\
+  \bullet & \lipsum[7][6]\\
+\end{tabu}   
+\vspace{4em}
+\begin{tabu}to \textwidth {X[2]X}     
+  & {\scriptsize References available upon request }
+\end{tabu}   
+\end{document}

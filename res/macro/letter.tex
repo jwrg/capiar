@@ -1,0 +1,46 @@
+%
+% Letter-writing macros
+%
+% Provides some commands useful for authoring letters.
+% NB. Commands specific to writing cover letters can be
+% found in res/macro/cletter.tex
+%
+
+% Commands to be used in the letter body
+\newcommand{\address}{
+  \textcolor{pink}{
+  \begin{raggedleft}
+      \textcolor{purple}{\sender{}} \\
+      \street{} \\
+      \city{} \\
+      \locality{} \\
+      \phone{} \\
+      \email{} \\
+  \end{raggedleft}}
+  }
+
+\newcommand{\opening}[1][Dear]{
+  \begin{raggedleft}
+    \vspace{1em}
+    \textcolor{purple}{\today{}} \\
+    \vspace{3em}
+  \end{raggedleft}
+  
+  \begin{raggedright}
+    \textcolor{purple}{\recipient{}} \\
+    \textcolor{pink}{\company{}}  \\
+    \vspace{3em}
+    \textcolor{grey}{{#1} \recipient{}}, \\
+    \vspace{2em}
+  \end{raggedright}
+}
+
+\newcommand{\closing}[1][Sincerely,]{
+  \begin{raggedright}
+    \vspace{3em}
+    {#1}\\
+    \vspace{3em}
+    \textcolor{grey}{\sender{}}
+    \vspace{6em}
+  \end{raggedright}
+}
