@@ -32,13 +32,17 @@
 
 \NewEnviron{verbchart}[4]{
   \begin{center}
+
+    \vspace{3ex}
+    \renewcommand{\arraystretch}{1.25}
     \setlength{\tabcolsep}{4pt}
-    \begin{tabu}to \textwidth {X[l]X[0.7,c]X[0.8,c]X[0.6,r]}
-    \textit{{#1}} & \textbf{Tense:} {#2} & \textbf{Mood:} {#4} & \textbf{Voice:} {#3} \\ 
+    \begin{tabu}to \textwidth {X[0.7,l]X[0.8,c]X[0.6,r]}
+      \multicolumn{3}{l}{\textbf{#1}} \\
+      Aspect: {#2} & Mood: {#4} & Voice: {#3} \\ 
   \end{tabu}
   \end{center}
 
-  \vspace{-1em}
+  \vspace{-1ex}
   \begin{center}
   \textsf{
     \begin{tabu}to \textwidth {|X[c]|X[2.5,l]|X[2.5,l]|}
@@ -47,7 +51,7 @@
       \hline
       \BODY
     \end{tabu}
-    \vspace{3em}
+    \vspace{3ex}
   }
   \end{center}
   }

@@ -3,27 +3,36 @@
 \input{res/langhead}
 
 \begin{document}
-\pagenumbering{roman}		% turn off page numbering
+\pagenumbering{gobble}
 
 % Title page
-\firstpage{Dicti\=on\=arivm Gallovidi\=i Lingvae Lat\=inae}{A concise Latin dictionary for English-speakers}{I\=acomvs G\=allov\=idivs Septimvs}
+\firstpage
+{D\+i\+c\+t\+i\+o\+n\+a\+r\+i\+v\+m \+G\+a\+l\+l\+o\+v\+i\+d\+i\+i\+ \+L\+i\+n\+g\+v\+a\+e\+ \+L\+a\+t\+i\+n\+a\+e}
+{A Concise Latin Dictionary for English-Speakers}
+{Iacomvs Gallovidivs Septimvs}
+
+\pagenumbering{roman}
+\onehalfspace
 
 % Table of contents
 \newpage
 \tableofcontents
+
+\newpage\input{sections/preface}
 
 \pagenumbering{arabic}
 
 % Include sections
 
 \newpage\input{sections/conjugations}
-\newpage\input{sections/verbs}
-
 \newpage\input{sections/declensions}
+
+\newpage\input{sections/verbs}
 \newpage\input{sections/nouns}
 \newpage\input{sections/adjectives}
 
 \newpage\input{sections/adverbs}
+%\newpage\input{sections/pronouns}
 \newpage\input{sections/prepositions}
 
 \end{document}

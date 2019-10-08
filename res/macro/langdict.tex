@@ -12,9 +12,17 @@
 %   ->  This command simplifies the generation of dictionary-
 %       style entries without the use of tables.
 %
+
+\makeatletter
+\def\removespaces#1{\zap@space#1 \@empty}
+\makeatother
+
+\newcommand{\+}{\discretionary{}{}{}}
+
 \newcommand{\firstpage}[3]{
   \begin{center}
-    \uppercase{\bfseries\Huge {#1} }
+  \uppercase{\fontsize{76pt}{78pt}\selectfont\removespaces{#1}}
+  \fontsize{10pt}{12pt}\selectfont
 
     \vspace{6em}
     { \normalsize {#2} }
