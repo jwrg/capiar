@@ -22,11 +22,11 @@ When writing your preamble, after your documentclass, include one or more header
 
 Each header file is tailored to a use case:
 
-- head.tex (General header file for use in all docs)
-- asshead.tex (Assignment-writing header file)
-- langhead.tex (Language-related documents)
-- letterhead.tex (Letters and cover letters)
-- resumehead.tex (CV/resumes)
+- res/__head.tex__ (General header file for use in all docs)
+- res/__asshead.tex__ (Assignment-writing header file)
+- res/__langhead.tex__ (Language-related documents)
+- res/__letterhead.tex__ (Letters and cover letters)
+- res/__resumehead.tex__ (CV/resumes)
 
 The header files are the only files which need be included in your preamble.  The header
 files have some crossover, so don't include more than you need.  The resource files
@@ -34,7 +34,12 @@ located in the `res/macro` and `res/style` folders need not be included as they 
 domain of the header files.  Not heeding this warning will create circulars.
 
 Included in the `examples/` folder are some illustrative documents highlighting some use
-cases.  These are subject to frequent change, especially the dictionary, which will be
+cases.  The examples currently present are
+- examples/assignment/__ass14.tex__ (A school-type assignment)
+- examples/cletter/__cover_letter.tex__ (A cover letter)
+- examples/dictionary/__dictionary.tex__ (A Latin dictionary)
+- examples/resume/__resume.tex__ (A technical resume)
+A These are subject to frequent change, especially the dictionary, which will be
 edited often.
 
 Macros are (poorly) documented in the resource files in which they appear.  The examples
