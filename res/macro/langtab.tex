@@ -60,7 +60,7 @@
     \begin{center}
       \setlength{\tabcolsep}{4pt}
       \begin{tabu} to \textwidth {X[1.1,l]X[r]}
-        \textit{{#1}},  {#2}. & {#3} declension \\ 
+        \textbf{{#1}},  {#2}. & {#3} declension \\ 
       \end{tabu}
     \end{center}
 
@@ -97,5 +97,27 @@
         \end{tabu}
         \vspace{3em}
       }
+    \end{center}
+  }
+
+  \NewEnviron{pronounchart}[1]{
+    \begin{center}
+      \setlength{\tabcolsep}{4pt}
+      \begin{tabu} to \textwidth {X[l]}
+        \textbf{{#1}}\\
+      \end{tabu}
+    \end{center}
+
+    \vspace{-1em}
+    \begin{center}
+    \textsf{
+      \begin{tabu}to \textwidth {|X[c]|X[1.2,l]|X[1.2,l]|X[1.2,l]|}
+        \hline
+        & \textbf{Masculine} & \textbf{Feminine} & \textbf{Neuter} \\
+        \hline
+        \BODY
+      \end{tabu} 
+      \vspace{3em}
+    }
     \end{center}
   }
