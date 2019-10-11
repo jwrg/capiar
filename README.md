@@ -39,7 +39,8 @@ cases.  The examples currently present are
 - examples/cletter/__cover_letter.tex__ (A cover letter)
 - examples/dictionary/__dictionary.tex__ (A Latin dictionary)
 - examples/resume/__resume.tex__ (A technical resume)
-A These are subject to frequent change, especially the dictionary, which will be
+
+These are subject to frequent change, especially the dictionary, which will be
 edited often.
 
 Macros are (poorly) documented in the resource files in which they appear.  The examples
