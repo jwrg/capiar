@@ -1,0 +1,59 @@
+\documentclass[10pt]{article}
+\input{res/head}
+\input{res/refhead}
+
+\begin{document}
+\pagenumbering{gobble}		% turn off page numbering
+\titletable{Linux Cheat Sheet}{Git, SSH, and Python}
+\vspace{1em}
+
+\renewcommand{\arraystretch}{1.6}
+\section{Bash (The Bourne Again SHell)}
+\subsection{Getting information:}
+\refentry{\$ ls }{List the contents of the working directory}
+\refentry{\$ tree }{List a tree of files and directories under the working directory}
+\refentry{\$ pwd }{Print working directory (i.e., what directory am I in?)}
+\refentry{\$ w}{Get information about users currently logged in}
+\refentry{\$ who}{Get information about users currently logged in}
+\refentry{\$ crontab -l }{List the current cron table}
+\refentry{\$ top }{Get realtime information on running processes (press Q to exit)}
+\refentry{\$ man <program> }{Open the manual page for \texttt{<program>}}
+\subsection{Manipulating files:}
+\refentry{\$ mkdir <path> }{Create a new directory at \texttt{<path>} }
+\refentry{\$ cp <path> <dest> }{Copy file at \texttt{<path>} to destination \texttt{<dest>}}
+\refentry{\$ mv <path> <dest> }{Move file at \texttt{<path>} to destination \texttt{<dest>} (this also works for renaming files)}
+\refentry{\$ rm <path>  }{Delete file at \texttt{<path>} \textit{(be careful!)}}
+\refentry{\$ nano <path> }{Open the file at \texttt{<path>} using the nano text editor}
+\subsection{Changing the system:}
+\refentry{\$ crontab -e }{Edit the current cron table with the system default text editor}
+\subsection{Close program, or the shell}
+\refentry{\keystroke{Ctrl} $+$ \keystroke{c}}{Kill the process running in the shell}
+\refentry{\keystroke{Ctrl} $+$ \keystroke{d}}{Quit the current shell session}
+\refentry{\$ exit}{Quit the current shell session}
+
+\section{Git}
+\subsection{General commands:}
+\refentry{\$ git status}{Check status of the git repository in the working directory}
+\refentry{\$ git log}{View all the commits for the current repsitory (this may open a pager if there are numerous commits)}
+\refentry{\$ git diff}{View all the unstaged changes made since the last commit}
+\refentry{\$ git remote -v show}{View information on remote sources for the repository}
+\refentry{\$ git remote add <alias> <URL> }{Add a remote location for the repository at \texttt{<URL>} under the alias \texttt{<alias>}}
+\subsection{When making changes to code:}
+\refentry{\$ git add <path>}{Add the path \texttt{<path>} to the staging area to be included in the next commit}
+\refentry{\$ git add .}{Add everything in the current directory to the staging area to be included in the next commit}
+\refentry{\$ git commit -m <string>}{Commit all staged changes and include a message, \texttt{<string>}}
+\refentry{\$ git commit -v}{Commit all staged changes and open the system default text editor to author a commit message}
+\refentry{\$ git push origin master}{Upload the most recent commit(s) on the master branch to the origin}
+\subsection{When downloading the code from the cloud:}
+\refentry{\$ git clone <URL>}{Download the repository located at \texttt{<URL>} to the working directory, in a directory with the repository's name}
+\refentry{\$ git pull}{Download the most up-to-date version of the current repository via the origin}
+
+\section{SSH}
+\refentry{\$ ssh <host>}{Open a remote shell on \texttt{<host>} under the default user for \texttt{<host>}}
+\refentry{\$ ssh <user>@<host>}{Open a remote shell on \texttt{<host>} under the user \texttt{<user>}}
+
+\section{Python}
+\refentry{\$ python }{Open the Python interpreter}
+\refentry{\$ python <path> }{Run the file at \texttt{<path>} using Python}
+
+\end{document}

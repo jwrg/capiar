@@ -1,0 +1,42 @@
+%
+% Reference sheet header file
+% 
+% For use when authoring short reference
+% materials like cheat sheets, formulae
+% sheets, and some simple diagrams.
+%
+% Includes:
+%
+% res/macro/reftab.tex (for reference tables)
+% res/macro/keystroke.tex (for keyboard shortcuts)
+%
+
+% Layout
+\usepackage{
+  geometry,     % adjust margins, orientation
+  environ,      % enhanced environment declaration
+}
+
+\geometry{
+  letterpaper,    % paper size
+  margin=1.25in,  % manually set page margins
+}
+
+% Fonts
+\usepackage{
+  tikz,       % fancy drawings
+}
+\usetikzlibrary{
+  shadows,    % fancy shadows for keystrokes
+}
+\input{res/style/font}
+\input{res/macro/keystroke}
+
+% Colours
+%\input{res/style/colour}
+
+% Overrides
+%\renewcommand{\arraystretch}{9}
+
+% Include macros
+\input{res/macro/reftab}
