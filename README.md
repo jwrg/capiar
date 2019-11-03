@@ -30,20 +30,22 @@ $ ./install.sh -s
 Capiar provides the following LaTeX classes:
 
 - cls/__assignment.cls__
-- cls/__linguistics.cls__
 - cls/__letter.cls__
+- cls/__linguistics.cls__
+- cls/__reference.cls__
+- cls/__resume.cls__
 
 Capiar provides the following LaTeX packages:
 
-- sty/__inscription.sty__ (Formats text like inscriptions)
 - sty/__ceystroke.sty__ (Keystroke-imitating "font")
+- sty/__inscription.sty__ (Formats text like inscriptions)
 - sty/__linguistics.sty__ (Tables for declining/conjugating)
 
 Also included are some Capiar-specific packages:
 
-- preamble.sty
-- capiar\_font.sty
-- capiar\_colour.sty
+- sty/__capiar\_font.sty__
+- sty/__capiar\_colour.sty__
+- sty/__preamble.sty__
 
 When writing your preamble, after your documentclass, include 
 a class and one or more packages:

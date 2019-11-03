@@ -1,0 +1,68 @@
+%
+% Resume-related tables and commands
+%
+
+\NeedsTeXFormat{LaTeX2e}[1996/06/01]
+\ProvidesPackage{resume}[Capiar Resume resources]
+
+\RequirePackage{
+  capiar_colour,
+  colortbl,
+  environ,
+  tabu,
+}
+
+\newcommand\titletable[4]{
+  \sffamily{
+    \begin{tabu}to \textwidth {X[l]X[c]X[r]}
+      \noalign{\global\arrayrulewidth=0.16em}
+      &	\textcolor{grey}{\huge {#1} }	&	\tabularnewline 
+      \arrayrulecolor{purple}\hline
+      \textcolor{pink}{\small {#2} } &	\textcolor{grey}{\small \texttt{{#3}}}	 &\textcolor{pink}{\small {#4} }\tabularnewline
+    \end{tabu}
+  }
+}
+
+\newcommand\actionhead[4]{
+  \begin{tabu}to \textwidth {X[l]X[r]} 
+    {#1} & {#2} \\
+    \textcolor{pink}{#3} & \textcolor{pink}{#4} \\
+  \end{tabu}
+}
+
+\newcommand\actionheader[5]{
+  \begin{tabu}to \textwidth {X[l]X[r]} 
+    \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+    {#2} & {#3} \\
+    \textcolor{pink}{#4} & \textcolor{pink}{#5} \\
+  \end{tabu}
+}
+
+\newcommand\actionheaderdub[7]{
+  \begin{tabu}to \textwidth {X[l]X[r]}       
+    \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+    {#2} & {#3} \\
+    {#4} & {#5} \\
+    \textcolor{pink}{#6} & \textcolor{pink}{#7} \\
+  \end{tabu}
+}
+
+\NewEnviron{featurechart}[1]{
+  \sffamily{
+    \begin{tabu}to \textwidth {X[l]X[r]}
+      \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+      \BODY
+    \end{tabu}
+  }
+}
+
+\NewEnviron{outlinechart}[1]{
+  \sffamily{
+    \begin{tabu}to \textwidth {XX[2.4]}        
+      \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+      \BODY
+    \end{tabu}
+  }
+}
+
+\endinput
