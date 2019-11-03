@@ -6,6 +6,15 @@
 % found in res/macro/cletter.tex
 %
 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{coverletter}[2019/11/03 Capiar Cover letter resources]
+
+\RequirePackage{
+  etoolbox,   % helper commands (i.e., ifdefempty)
+}
+
+\newcommand{\postingsource}{\ifdefempty{\source}{}{ as posted on \source{}}}
+
 % Commands to be used in the letter body
 \newcommand{\address}{
   \textcolor{pink}{
@@ -44,3 +53,5 @@
     \vspace{6em}
   \end{raggedright}
 }
+
+\endinput

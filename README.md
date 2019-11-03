@@ -21,7 +21,7 @@ $ cd capiar
 $ ./install.sh
 
 # For global install
-$ ./install.sh -g
+$ sudo ./install.sh -g
 
 # For symlink install
 $ ./install.sh -s
@@ -30,7 +30,7 @@ $ ./install.sh -s
 Capiar provides the following LaTeX classes:
 
 - cls/__assignment.cls__
-- cls/__letter.cls__
+- cls/__coverletter.cls__
 - cls/__linguistics.cls__
 - cls/__reference.cls__
 - cls/__resume.cls__
@@ -38,8 +38,10 @@ Capiar provides the following LaTeX classes:
 Capiar provides the following LaTeX packages:
 
 - sty/__ceystroke.sty__ (Keystroke-imitating "font")
+- sty/__coverletter.sty__ (Useful commands for cover letters)
 - sty/__inscription.sty__ (Formats text like inscriptions)
 - sty/__linguistics.sty__ (Tables for declining/conjugating)
+- sty/__resume.sty__ (Tables and commands for resumes)
 
 Also included are some Capiar-specific packages:
 
@@ -62,7 +64,7 @@ cases.  The examples currently present are
 - examples/assignment/__ass14.tex__ (A school-type assignment)
 - examples/cheat/__linux\_cheat.tex__ (A rudimentary linux cheat-sheet)
 - examples/cheat/__vim\_cheat.tex__ (A non-exhausitve vim cheat-sheet)
-- examples/cletter/__cover\_letter.tex__ (A cover letter)
+- examples/coverletter/__coverletter.tex__ (A cover letter)
 - examples/dictionary/__dictionary.tex__ (A Latin dictionary)
 - examples/resume/__resume.tex__ (A technical resume)
 
