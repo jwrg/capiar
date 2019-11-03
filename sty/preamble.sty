@@ -1,5 +1,5 @@
 %
-% Base header file
+% Base preamble file
 %
 % For use with basically all templates
 %
@@ -12,9 +12,11 @@
 % NB that geometry is absent here so that it can be fed
 % parameters for different use cases.
 %
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{preamble}[2019/11/03 Capiar preamble]
 
 % Fonts and symbols
-\usepackage{
+\RequirePackage{
   amsmath,			% math operators
   amssymb,			% math symbols
   textcomp,			% Copyright and Registered symbols
@@ -22,7 +24,7 @@
 }
 
 % Layout
-\usepackage{
+\RequirePackage{
   multicol,			% allow multi columns
   parskip,			% no indenting on paras with a line between paras
   fancyhdr,			% fancy headers and footers
@@ -30,7 +32,9 @@
 }
 
 % Tables
-\usepackage{
+\RequirePackage{
   tabu,         % better than tabularx
   booktabs,     % improves table appearance
 }
+
+\endinput

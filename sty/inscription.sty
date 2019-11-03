@@ -1,0 +1,25 @@
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{inscription}[2019/11/03]
+
+\RequirePackage{capiar_font}
+
+%\makeatletter
+\def\removespaces#1{\zap@space#1 \@empty}
+%\makeatother
+
+\newcommand{\+}{\discretionary{}{}{}}
+
+\newcommand{\firstpage}[3]{
+  \begin{center}
+  \uppercase{\fontsize{76pt}{78pt}\selectfont\removespaces{#1}}
+  \fontsize{10pt}{12pt}\selectfont
+
+    \vspace{6em}
+    { \normalsize {#2} }
+
+    \vspace{6em}
+    \uppercase{\Large {#3} }
+  \end{center}
+}
+
+\endinput

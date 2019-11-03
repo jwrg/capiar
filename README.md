@@ -1,6 +1,6 @@
 # Capiar
 
-**Header files and macros for LaTeX documents**
+** Some classes, packages, and macros for LaTeX documents**
 
 I got tired of having the same preamble for large swaths of documents, so I cobbled
 together the packages which were common to certain kinds of documents, and the macros
@@ -9,34 +9,48 @@ I have succeeded is another story.
 
 ## Usage
 
-Once the `res/` folder is local on your machine, in your document directory, symlink or
-copy the `res/` folder.
+Use the install.sh script included to install, either for
+your user or globally.
 
-When writing your preamble, after your documentclass, include one or more header files:
+```shell
+# Clone me
+$ git clone https://github.com/jwrg/capiar.git
+$ cd capiar
 
-```LaTeX
-\documentclass[10pt]{article}
-\input{res/head}
-\input{res/letterhead}
+# For local install
+$ ./install.sh
+
+# For global install
+$ ./install.sh -g
+
+# For symlink install
+$ ./install.sh -s
 ```
 
-For all documents, include the most basic useful set of packages:
+Capiar provides the following LaTeX classes:
 
-- res/__head.tex__ (General header file for use in all docs)
+- linguistics.cls
 
-The other header files are each tailored to one or several related use cases:
+Capiar provides the following LaTeX packages:
 
-- res/__asshead.tex__ (Assignment-writing header file)
-- res/__langhead.tex__ (Language-related documents)
-- res/__letterhead.tex__ (Letters and cover letters)
-- res/__refhead.tex__ (Cheat/formula sheets)
-- res/__resumehead.tex__ (CV/resumes)
+- inscription.sty
+- linguistics.sty
 
-The header files are the only files which need be included in your preamble.  The header
-files have some crossover, and in general you should only need one in addition to 
-`res/head.tex`.  The resource files located in the `res/macro` and `res/style` folders 
-need not be included as they are the domain of the header files.  Not heeding this 
-warning can/will create circulars.
+Also included are some Capiar-specific packages:
+
+- preamble.sty
+- capiar\_font.sty
+- capiar\_colour.sty
+
+When writing your preamble, after your documentclass, include 
+a class and one or more packages:
+
+```LaTeX
+\documentclass{linguistics}
+\usepackage{keystroke}
+\usepackage{inscription}
+% ...
+```
 
 Included in the `examples/` folder are some illustrative documents highlighting some use
 cases.  The examples currently present are
@@ -52,10 +66,11 @@ edited often.
 Macros are (poorly) documented in the resource files in which they appear.  The examples
 may be a better way to illustrate their usage.
 
-# Roadmap
+## Roadmap
 
 In the future, the following will be added:
 
+- Better documentation (potentially literate style codebase)
 - More use cases: mind maps (simplifying TiKZ), keyboard diagrams
 - More examples: formula sheet, correspondence letter
 

@@ -1,0 +1,30 @@
+%
+% Colour resource file
+%
+% Declare some colours and redeclare some stuff to make it pretty
+%
+%
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{capiar_colour}[2019/11/03 Capiar colours]
+
+
+\RequirePackage[dvipsnames]{
+  xcolor,       % Dope colours
+}
+
+\RequirePackage{
+  colortbl,     % Colours in tables
+}
+
+% This should go somewhere else eventually
+\renewcommand{\bullet}{\textcolor{pink}{\blacktriangleright}}
+
+% Redeclare some colour names
+\definecolor{purple}{cmyk}{0,0.71,0.58,0.52}
+\definecolor{brown}{cmyk}{0,0.02,0.38,0.58}
+\definecolor{pink}{cmyk}{0,0.61,0.5,0.28}
+\definecolor{blue}{cmyk}{0.71,0.21,0,0.65}
+\definecolor{grey}{cmyk}{0.19,0.6,0,0.80}
+\definecolor{lgrey}{cmyk}{0.19,0.6,0,0.20}
+
+\endinput
