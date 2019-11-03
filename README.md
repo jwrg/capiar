@@ -1,6 +1,6 @@
 # Capiar
 
-** Some classes, packages, and macros for LaTeX documents**
+**Some classes, packages, and macros for LaTeX documents**
 
 I got tired of having the same preamble for large swaths of documents, so I cobbled
 together the packages which were common to certain kinds of documents, and the macros
@@ -29,12 +29,15 @@ $ ./install.sh -s
 
 Capiar provides the following LaTeX classes:
 
-- linguistics.cls
+- cls/__assignment.cls__
+- cls/__linguistics.cls__
+- cls/__letter.cls__
 
 Capiar provides the following LaTeX packages:
 
-- inscription.sty
-- linguistics.sty
+- sty/__inscription.sty__ (Formats text like inscriptions)
+- sty/__ceystroke.sty__ (Keystroke-imitating "font")
+- sty/__linguistics.sty__ (Tables for declining/conjugating)
 
 Also included are some Capiar-specific packages:
 
@@ -47,7 +50,7 @@ a class and one or more packages:
 
 ```LaTeX
 \documentclass{linguistics}
-\usepackage{keystroke}
+\usepackage{ceystroke}
 \usepackage{inscription}
 % ...
 ```
@@ -55,8 +58,9 @@ a class and one or more packages:
 Included in the `examples/` folder are some illustrative documents highlighting some use
 cases.  The examples currently present are
 - examples/assignment/__ass14.tex__ (A school-type assignment)
-- examples/cheat/__linux_cheat.tex__ (A rudimentary linux cheat-sheet)
-- examples/cletter/__cover_letter.tex__ (A cover letter)
+- examples/cheat/__linux\_cheat.tex__ (A rudimentary linux cheat-sheet)
+- examples/cheat/__vim\_cheat.tex__ (A non-exhausitve vim cheat-sheet)
+- examples/cletter/__cover\_letter.tex__ (A cover letter)
 - examples/dictionary/__dictionary.tex__ (A Latin dictionary)
 - examples/resume/__resume.tex__ (A technical resume)
 

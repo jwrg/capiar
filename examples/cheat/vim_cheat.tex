@@ -1,0 +1,48 @@
+\documentclass{reference}
+\usepackage{ceystroke}
+
+\begin{document}
+\pagenumbering{roman}
+
+\titletable{Vim Cheat Sheet}{NOT comprehensive}
+
+\section{Moving the cursor}
+\refentry{\keystroke{j} \keystroke{k} \keystroke{l} \keystroke{;}}{{\large\keystroke{\textleftarrow} \keystroke{\textuparrow} \keystroke{\textdownarrow} \keystroke{\textrightarrow}}}
+\refentry{\keystroke{Ctrl}$+$ \keystroke{b}}{\keystroke{Pg \textuparrow}}
+\refentry{\keystroke{Ctrl}$+$ \keystroke{f}}{\keystroke{Pg \textdownarrow}}
+
+\subsection{Navigating lines}
+\refentry{\keystroke{w}}{Next word}
+\refentry{\keystroke{b}}{Previous word}
+\refentry{\keystroke{g} \keystroke{e}}{Next end of word}
+\refentry{\keystroke{e}}{Previous end of word}
+\refentry{\keystroke{0}}{Beginning of line (hard)}
+\refentry{\keystroke{\textasciicircum}}{Beginning of line (soft)}
+\refentry{\keystroke{\$}}{End of line}
+  
+\section{Moving the text around the cursor}
+\refentry{\keystroke{z} \keystroke{z}}{Zoom the text so the cursor is in the middle of the window}
+\refentry{\keystroke{z} \keystroke{t}}{Zoom the text so the cursor is at the top of the window}
+\refentry{\keystroke{z} \keystroke{b}}{Zoom the text so the cursor is in the bottom of the window}
+
+\section{Manipulating windows}
+\refentry{\keystroke{Ctrl}$+$ \keystroke{w}}{Window leader}
+
+\subsection{After hitting the leader:}
+\refentry{\keystroke{j} \keystroke{k} \keystroke{l} \keystroke{;}}{Switch window focus \textleftarrow, \textuparrow, \textdownarrow, \textrightarrow}
+\refentry{\keystroke{r}}{Rotate selected window}
+\refentry{\keystroke{=}}{Equalize window heights and widths}
+
+\section{Editing}
+\refentry{\keystroke{r}}{Replace}
+\refentry{\keystroke{i}}{Insert}
+\refentry{\keystroke{a}}{Append}
+\refentry{\keystroke{c}}{Change}
+
+\section{Completion}
+\refentry{\keystroke{Ctrl}$+$ \keystroke{x}}{Completion leader}
+
+\subsection{After hitting the leader:}
+\refentry{\keystroke{Ctrl}$+$ \keystroke{p}}{Word completion select}
+\refentry{\keystroke{Ctrl}$+$ \keystroke{l}}{Line completion select}
+\end{document}
