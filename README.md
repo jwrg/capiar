@@ -9,23 +9,17 @@ I have succeeded is another story.
 
 ## Usage
 
-Use the install.sh script included to install, either for
-your user or globally.
+Installation is done manually for now.  Either an install
+script or conversion to literate-style programming with the
+associated install drivers is forthcoming.
 
+Worst case Ontario:
 ```shell
-# Clone me
 $ git clone https://github.com/jwrg/capiar.git
-$ cd capiar
-
-# For local install
-$ ./install.sh
-
-# For global install
-$ sudo ./install.sh -g
-
-# For symlink install
-$ ./install.sh -s
+$ cp capiar/{cls,sty}/* ~/texmf/tex/latex/
 ```
+
+### LaTeX Classes
 
 Capiar provides the following LaTeX classes:
 
@@ -34,6 +28,8 @@ Capiar provides the following LaTeX classes:
 - cls/__linguistics.cls__
 - cls/__reference.cls__
 - cls/__resume.cls__
+
+### LaTeX Packages
 
 Capiar provides the following LaTeX packages:
 
@@ -45,12 +41,12 @@ Capiar provides the following LaTeX packages:
 
 Also included are some Capiar-specific packages:
 
+- sty/__capiar\_preamble.sty__
 - sty/__capiar\_font.sty__
 - sty/__capiar\_colour.sty__
-- sty/__preamble.sty__
 
-When writing your preamble, after your documentclass, include 
-a class and one or more packages:
+When writing your preamble, use one of the above classes
+and/or one or more packages.
 
 ```LaTeX
 \documentclass{linguistics}
@@ -58,6 +54,8 @@ a class and one or more packages:
 \usepackage{inscription}
 % ...
 ```
+
+## Examples
 
 Included in the `examples/` folder are some illustrative documents highlighting some use
 cases.  The examples currently present are
