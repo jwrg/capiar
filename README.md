@@ -34,7 +34,7 @@ Capiar provides the following LaTeX classes:
 Capiar provides the following LaTeX packages:
 
 - sty/__ceystroke.sty__ (Keystroke-imitating "font")
-- sty/__coverletter.sty__ (Useful commands for cover letters)
+- sty/__coverletter.dtx__ (Useful commands for cover letters)
 - sty/__inscription.sty__ (Formats text like inscriptions)
 - sty/__linguistics.sty__ (Tables for declining/conjugating)
 - sty/__resume.sty__ (Tables and commands for resumes)

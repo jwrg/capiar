@@ -1,0 +1,215 @@
+% \iffalse meta-comment
+%<*internal>
+\iffalse
+%</internal>
+%<*readme>
+------------------------------------------------------------
+coverletter --- Capiar coverletter macro package
+jwrg
+Released under the LGPLv2
+------------------------------------------------------------
+%</readme>
+%<*internal>
+\fi
+\def\nameofplainTeX{plain}
+\ifx\fmtname\nameofplainTeX\else
+  \expandafter\begingroup
+\fi
+%<*install>
+\input docstrip.tex
+\keepsilent
+\askforoverwritefalse
+\preamble
+------------------------------------------------------------
+coverletter --- Capiar coverletter macro package
+jwrg
+Released under the LGPLv2
+------------------------------------------------------------
+\endpreamble
+\postamble
+
+Copyright (C) 2019 jwrg <jwrg@uvic.ca>
+
+Released under the LGPL.
+https://www.gnu.org/licenses/lgpl-3.0.txt
+
+This .dtx file generates the files
+  coverletter.ins,
+  coverletter.pdf, and
+  coverletter.sty.
+\endpostamble
+\usedir{tex/latex/capiar/coverletter}
+\generate{
+  \file{\jobname.sty}{\from{\jobname.dtx}{package}}
+}
+%</install>
+%<install>\endbatchfile
+%<*internal>
+\usedir{source/latex/capiar/coverletter}
+\generate{
+  \file{\jobname.ins}{\from{\jobname.dtx}{install}}
+}
+\nopreamble\nopostamble
+\usedir{doc/latex/capiar/coverletter}
+\generate{
+  \file{README.txt}{\from{\jobname.dtx}{readme}}
+}
+\ifx\fmtname\nameofplainTeX
+  \expandafter\endbatchfile
+\else
+  \expandafter\endgroup
+\fi
+%</internal>
+%<*package>
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{coverletter}[2019/11/03 v0.1 Capiar coverletter]
+\RequirePackage{etoolbox}
+%</package>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage{capiar_font}
+\usepackage{\jobname}
+\usepackage[numbered]{hypdoc}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+  \DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+%\GetFileInfo{\jobname.sty}
+%
+%\def\fileversion{v0.1}
+%\def\filedate{2019/11/03}
+%\title{^^A
+%  \textsf{Capiar} $\to$ coverletter macro package\thanks{^^A
+%    This file describes version \fileversion, last revised \filedate.^^A
+%  }^^A
+%}
+%\author{^^A
+%  jwrg\thanks{E-mail: jwrg@uvic.ca}^^A
+%}
+%\date{\today} 
+%
+%\maketitle
+%
+%\changes{v0.1}{2019/11/03}{Initial dtx version}
+%
+%\section{Introduction}
+%
+% Provides some commands useful for authoring letters.
+% Package |etoolbox| is included for 
+% |\ifdefempty|.
+%
+%\section{Usage}
+%
+%\DescribeMacro{\address}
+% Outputs a formatted address.  Requires that the following
+% be filled out in the cover letter preamble as per the
+% given example:
+%\begin{itemize}
+%  \item \textbackslash{}street
+%  \item \textbackslash{}city
+%  \item \textbackslash{}locality
+%  \item \textbackslash{}phone
+%  \item \textbackslash{}email
+%\end{itemize}
+%
+%\DescribeMacro{\opening}
+% Outputs a formatted opening.  Takes a default argument
+% which is the greeting used.  Defaults to `dear.'  Requires
+% that the following be filled out in the cover letter
+% preamble as per the given example:
+%\begin{itemize}
+%  \item \textbackslash{}recipient
+%  \item \textbackslash{}company
+%\end{itemize}
+%
+%\DescribeMacro{\closing}
+% Outputs a formatted closing.  Takes a default argument
+% which is the farewell used.  Defaults to `sincerely,'.
+% Requires that the following be filled out in the cover
+% letter preamble as per the given example:
+%\begin{itemize}
+%  \item \textbackslash{}sender
+%\end{itemize}
+%
+%\DescribeMacro{\postingsource}
+% A helper command that returns blank if no posting source
+% is specified in the coverletter preamble.
+%
+%\StopEventually{^^A
+%  \PrintChanges
+%  \PrintIndex
+%}
+%
+% \section{Implementation}
+%
+% \begin{macro}{\address}
+% Formats the address so that it's pink, raggedleft, and
+% uses the values filled out in the coverletter preamble.
+%    \begin{macrocode}
+\newcommand{\address}{
+  \textcolor{pink}{
+    \begin{raggedleft}
+      \textcolor{purple}{\sender{}} \\
+      \street{} \\
+      \city{} \\
+      \locality{} \\
+      \phone{} \\
+      \email{} \\
+    \end{raggedleft}}
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\opening}
+% Formats the opening so that we get today's date on the
+% right and the recipient and their company just below
+% on the left.
+%    \begin{macrocode}
+\newcommand{\opening}[1][Dear]{
+  \begin{raggedleft}
+    \vspace{1em}
+    \textcolor{purple}{\today{}} \\
+    \vspace{3em}
+  \end{raggedleft}
+
+  \begin{raggedright}
+    \textcolor{purple}{\recipient{}} \\
+    \textcolor{pink}{\company{}}  \\
+    \vspace{3em}
+    \textcolor{grey}{{#1} \recipient{}}, \\
+    \vspace{2em}
+  \end{raggedright}
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\closing}
+% Formats the closing so that it's on the left and
+% has ample space.
+%    \begin{macrocode}
+\newcommand{\closing}[1][Sincerely,]{
+  \begin{raggedright}
+    \vspace{3em}
+    {#1}\\
+    \vspace{3em}
+    \textcolor{grey}{\sender{}}
+    \vspace{6em}
+  \end{raggedright}
+}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\postingsource}
+% Make the inclusion of a job posting source grammatically
+% correct.  If nothing, output nothing.
+%    \begin{macrocode}
+\newcommand{\postingsource}{\ifdefempty{\source}{}{ as posted on \source{}}}
+%    \end{macrocode}
+% \end{macro}
+%
+%\Finale
