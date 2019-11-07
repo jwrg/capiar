@@ -3,11 +3,13 @@
 \iffalse
 %</internal>
 %<*readme>
-------------------------------------------------------------
-coverletter --- Capiar coverletter macro package
-jwrg
-Released under the LGPLv2
-------------------------------------------------------------
+----------------------------------------------------------------
+Capiar coverletter --- coverletter macro package
+E-mail: jwrg@uvic.ca
+Released under the LGPLv3
+----------------------------------------------------------------
+
+This file is intended to be used with the coverletter class.
 %</readme>
 %<*internal>
 \fi
@@ -15,28 +17,35 @@ Released under the LGPLv2
 \ifx\fmtname\nameofplainTeX\else
   \expandafter\begingroup
 \fi
+%</internal>
 %<*install>
 \input docstrip.tex
 \keepsilent
 \askforoverwritefalse
 \preamble
-------------------------------------------------------------
-coverletter --- Capiar coverletter macro package
-jwrg
-Released under the LGPLv2
-------------------------------------------------------------
+----------------------------------------------------------------
+Capiar coverletter --- coverletter macro package
+E-mail: jwrg@uvic.ca
+Released under the LGPLv3
+----------------------------------------------------------------
+
 \endpreamble
 \postamble
 
-Copyright (C) 2019 jwrg <jwrg@uvic.ca>
+Copyright (C) 2009 by You <you@your.domain>
 
-Released under the LGPL.
+This work may be distributed and/or modified under the
+conditions of the GNU Lesser General Public License v3 (LGPLv3)
+
 https://www.gnu.org/licenses/lgpl-3.0.txt
 
-This .dtx file generates the files
-  coverletter.ins,
-  coverletter.pdf, and
-  coverletter.sty.
+jwrg
+
+This work consists of the file  coverletter.dtx
+and the derived files           coverletter.ins,
+                                coverletter.pdf and
+                                coverletter.sty.
+
 \endpostamble
 \usedir{tex/latex/capiar/coverletter}
 \generate{
@@ -61,13 +70,14 @@ This .dtx file generates the files
 \fi
 %</internal>
 %<*package>
-\NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesPackage{coverletter}[2019/11/03 v0.1 Capiar coverletter]
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{coverletter}[2009/10/06 v1.0 Capiar coverletter macros]
 \RequirePackage{etoolbox}
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
-\usepackage{capiar_font}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{\jobname}
 \usepackage[numbered]{hypdoc}
 \EnableCrossrefs
@@ -81,21 +91,19 @@ This .dtx file generates the files
 %
 %\GetFileInfo{\jobname.sty}
 %
-%\def\fileversion{v0.1}
-%\def\filedate{2019/11/03}
 %\title{^^A
-%  \textsf{Capiar} $\to$ coverletter macro package\thanks{^^A
+%  \textsf{coverletter} --- macros for the coverletter class\thanks{^^A
 %    This file describes version \fileversion, last revised \filedate.^^A
 %  }^^A
 %}
 %\author{^^A
 %  jwrg\thanks{E-mail: jwrg@uvic.ca}^^A
 %}
-%\date{\today} 
+%\date{Released \filedate}
 %
 %\maketitle
 %
-%\changes{v0.1}{2019/11/03}{Initial dtx version}
+%\changes{v1.0}{2019/11/07}{First public release}
 %
 %\section{Introduction}
 %
@@ -140,14 +148,23 @@ This .dtx file generates the files
 % A helper command that returns blank if no posting source
 % is specified in the coverletter preamble.
 %
+%\DescribeMacro{\examplemacro}
+% Some text about an example macro called \cs{examplemacro}, which
+% might have an optional argument \oarg{arg1} and mandatory one
+% \marg{arg2}.
+%
 %\StopEventually{^^A
 %  \PrintChanges
 %  \PrintIndex
 %}
 %
-% \section{Implementation}
+%\section{Implementation}
 %
-% \begin{macro}{\address}
+%    \begin{macrocode}
+%<*package>
+%    \end{macrocode}
+%
+%\begin{macro}{\address}
 % Formats the address so that it's pink, raggedleft, and
 % uses the values filled out in the coverletter preamble.
 %    \begin{macrocode}
@@ -163,9 +180,9 @@ This .dtx file generates the files
     \end{raggedleft}}
 }
 %    \end{macrocode}
-% \end{macro}
+%\end{macro}
 %
-% \begin{macro}{\opening}
+%\begin{macro}{\opening}
 % Formats the opening so that we get today's date on the
 % right and the recipient and their company just below
 % on the left.
@@ -186,9 +203,9 @@ This .dtx file generates the files
   \end{raggedright}
 }
 %    \end{macrocode}
-% \end{macro}
+%\end{macro}
 %
-% \begin{macro}{\closing}
+%\begin{macro}{\closing}
 % Formats the closing so that it's on the left and
 % has ample space.
 %    \begin{macrocode}
@@ -202,14 +219,19 @@ This .dtx file generates the files
   \end{raggedright}
 }
 %    \end{macrocode}
-% \end{macro}
+%\end{macro}
 %
-% \begin{macro}{\postingsource}
+%\begin{macro}{\postingsource}
 % Make the inclusion of a job posting source grammatically
 % correct.  If nothing, output nothing.
 %    \begin{macrocode}
+%<*package>
 \newcommand{\postingsource}{\ifdefempty{\source}{}{ as posted on \source{}}}
 %    \end{macrocode}
-% \end{macro}
+%</package>
+%\end{macro}
 %
+%    \begin{macrocode}
+%</package>
+%    \end{macrocode}
 %\Finale
