@@ -13,6 +13,15 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesClass{assignment}[2019/11/03 Capiar Assignment class]
 
+% Class options
+\DeclareOption{roman}{
+  \newcommand{\numstyle}{\roman}
+}
+\DeclareOption{arabic}{
+  \newcommand{\numstyle}{\arabic}
+}
+\ProcessOptions\relax
+
 % Heavy lifting
 \LoadClass[10pt]{article}
 
@@ -46,8 +55,8 @@
 % Overrides
 \renewcommand{\arraystretch}{1.5}
 \setlength{\tabcolsep}{12pt}
-\setlist[enumerate,1]{leftmargin=0pt,align=right,labelindent=0pt,labelwidth=\parindent,labelsep=16pt,itemindent=1ex,label=\roman*.}
-\setlist[enumerate,2]{leftmargin=0pt,align=right,labelindent=6pt,labelwidth=\parindent,labelsep=6pt,itemindent=1ex,label=\arabic*.}
+  \setlist[enumerate,1]{leftmargin=0pt,align=right,labelindent=0pt,labelwidth=\parindent,labelsep=16pt,itemindent=1ex,label=\numstyle*.}
+  \setlist[enumerate,2]{leftmargin=0pt,align=right,labelindent=6pt,labelwidth=\parindent,labelsep=6pt,itemindent=1ex,label=\numstyle*.}
 \DeclareTextCompositeCommand{\=}{T1}{i}{\=\i}
 
 % Commands

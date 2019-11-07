@@ -51,6 +51,25 @@
   \vspace{1ex}
 }
 
+\newcommand{\dictontry}[2]{
+  \noindent\begin{minipage}[c][][c]{0.99\linewidth}
+    \raggedright
+    \textbf{ #1 }
+  \end{minipage}
+
+  \vspace{-2.5ex}
+  \begin{minipage}[c][][c]{0.99\linewidth}
+    \raggedleft
+    { #2 }
+  \end{minipage}
+
+  \vspace{1ex}
+}
+
+\newcommand{\chartheading}[1]{
+  \multicolumn{4}{|c|}{\textbf{#1}} \\\hline
+}
+
 % Environments
 \NewEnviron{refchart}{
   \begin{center}
@@ -134,25 +153,27 @@
 }
 
 \NewEnviron{pronounchart}[1]{
-  \begin{center}
-    \setlength{\tabcolsep}{4pt}
-    \begin{tabu} to \textwidth {X[l]}
-      \textbf{{#1}}\\
-    \end{tabu}
-  \end{center}
+%  \makebox[\textwidth]{
+    \begin{center}
+      \setlength{\tabcolsep}{4pt}
+      \begin{tabu} to \textwidth {X[l]}
+        \textbf{{#1}}\\
+      \end{tabu}
+    \end{center}
 
-  \vspace{-1em}
-  \begin{center}
-    \textsf{
-      \begin{tabu}to \textwidth {|X[c]|X[1.2,l]|X[1.2,l]|X[1.2,l]|}
-        \hline
-        & \textbf{Masculine} & \textbf{Feminine} & \textbf{Neuter} \\
-        \hline
-        \BODY
-      \end{tabu} 
-      \vspace{3em}
-    }
-  \end{center}
+    \vspace{-1em}
+    \begin{center}
+      \textsf{
+        \begin{tabu}to \textwidth {|X[c]|X[1.2,l]|X[1.2,l]|X[1.2,l]|}
+          \hline
+          & \textbf{Masculine} & \textbf{Feminine} & \textbf{Neuter} \\
+          \hline
+          \BODY
+        \end{tabu} 
+        \vspace{3em}
+      }
+    \end{center}
+%  }
 }
 
 \endinput
