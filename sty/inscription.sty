@@ -3,22 +3,30 @@
 
 \RequirePackage{capiar_font}
 
-%\makeatletter
-\def\removespaces#1{\zap@space#1 \@empty}
-%\makeatother
+\def\removesp@ces#1{\zap@space#1 \@empty}
+
+\def\endp@d{\p@@dded!!!!}
+\def\p@d#1{%
+  \p@@d#1\endp@d}
+
+\def\p@@d{\afterassignment\p@@@d\let\tmp= }
+
+\def\p@@@d{%
+  \ifx\tmp\endp@d
+  \else \tmp\hfill
+  \expandafter\p@@d
+  \fi
+}
+
+\newcommand\massive{\@setfontsize\Huge{80}{85}}
+\newcommand\Massive{\@setfontsize\Huge{90}{110}}
 
 \newcommand{\+}{\discretionary{}{}{}}
 
-\newcommand{\firstpage}[3]{
+\newcommand{\inscription}[1]{
   \begin{center}
-  \uppercase{\fontsize{76pt}{78pt}\selectfont\removespaces{#1}}
+    \uppercase{\p@d{#1}}
   \fontsize{10pt}{12pt}\selectfont
-
-    \vspace{6em}
-    { \normalsize {#2} }
-
-    \vspace{6em}
-    \uppercase{\Large {#3} }
   \end{center}
 }
 
