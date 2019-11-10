@@ -61,6 +61,7 @@
 
 % Commands
 \newcommand\titletable[6]{
+  \addcontentsline{toc}{section}{#3}
   \begin{center}
     \renewcommand{\arraystretch}{1.0}
     \setlength{\tabcolsep}{4pt}
