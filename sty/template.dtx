@@ -4,7 +4,7 @@
 %</internal>
 %<*readme>
 ----------------------------------------------------------------
-Capiar template --- a template dtx file for capiar macro files
+Capiar Template --- a template dtx file for capiar macro files
 E-mail: jwrg@uvic.ca
 Released under the LGPLv3
 ----------------------------------------------------------------
@@ -17,7 +17,7 @@ macro files destined to be stripped of as .sty files.  All such
 \fi
 \def\nameofplainTeX{plain}
 \ifx\fmtname\nameofplainTeX\else
-  \expandafter\begingroup
+\expandafter\begingroup
 \fi
 %</internal>
 %<*install>
@@ -34,7 +34,7 @@ Released under the LGPLv3
 \endpreamble
 \postamble
 
-Copyright (C) 2009 by You <you@your.domain>
+Copyright (C) 2019 by jwrg <jwrg@uvic.ca>
 
 This work may be distributed and/or modified under the
 conditions of the GNU Lesser General Public License v3 (LGPLv3)
@@ -45,8 +45,8 @@ jwrg
 
 This work consists of the file  template.dtx
 and the derived files           template.ins,
-                                template.pdf and
-                                template.sty.
+template.pdf and
+template.sty.
 
 \endpostamble
 \usedir{tex/latex/capiar/template}
@@ -66,14 +66,14 @@ and the derived files           template.ins,
   \file{README.txt}{\from{\jobname.dtx}{readme}}
 }
 \ifx\fmtname\nameofplainTeX
-  \expandafter\endbatchfile
+\expandafter\endbatchfile
 \else
-  \expandafter\endgroup
+\expandafter\endgroup
 \fi
 %</internal>
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{template}[2009/10/06 v1.0 description text]
+\ProvidesPackage{template}[2019/11/16 v1.0 description text]
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
@@ -85,7 +85,7 @@ and the derived files           template.ins,
 \CodelineIndex
 \RecordChanges
 \begin{document}
-  \DocInput{\jobname.dtx}
+\DocInput{\jobname.dtx}
 \end{document}
 %</driver>
 % \fi
@@ -93,7 +93,7 @@ and the derived files           template.ins,
 %\GetFileInfo{\jobname.sty}
 %
 %\title{^^A
-%  \textsf{template} --- description text\thanks{^^A
+%  \textsf{Template} --- description text\thanks{^^A
 %    This file describes version \fileversion, last revised \filedate.^^A
 %  }^^A
 %}
@@ -104,7 +104,7 @@ and the derived files           template.ins,
 %
 %\maketitle
 %
-%\changes{v1.0}{2009/10/06}{First public release}
+%\changes{v1.0}{2019/11/16}{First public release}
 %
 %\section{Introduction}
 % Please give a short blurb about what this package is useful
@@ -114,8 +114,8 @@ and the derived files           template.ins,
 %
 %\DescribeMacro{\examplemacro}
 % Some text about an example macro called \cs{examplemacro}, which
-% might have an optional argument \oarg{arg1} and mandatory one
-% \marg{arg2}.
+% might have an optional argument \oarg{uard} and mandatory one
+% \marg{delahunty}.
 %
 %\StopEventually{^^A
 %  \PrintChanges
@@ -133,11 +133,11 @@ and the derived files           template.ins,
 %    \begin{macrocode}
 \newcommand*\examplemacro[2][]{%
   Some code here, probably
-}
-%    \end{macrocode}
-%\end{macro}
-%
-%    \begin{macrocode}
-%</package>
-%    \end{macrocode}
-%\Finale
+  }
+  %    \end{macrocode}
+  %\end{macro}
+  %
+  %    \begin{macrocode}
+  %</package>
+  %    \end{macrocode}
+  %\Finale
