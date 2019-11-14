@@ -1,0 +1,272 @@
+% \iffalse meta-comment
+%<*internal>
+\iffalse
+%</internal>
+%<*readme>
+----------------------------------------------------------------
+Capiar Resume --- macros for writing resumes
+E-mail: jwrg@uvic.ca
+Released under the LGPLv3
+----------------------------------------------------------------
+
+This file is indended for use with Capiar's resume class, and
+provides tables and headings for use in resume documents.
+%</readme>
+%<*internal>
+\fi
+\def\nameofplainTeX{plain}
+\ifx\fmtname\nameofplainTeX\else
+\expandafter\begingroup
+\fi
+%</internal>
+%<*install>
+\input docstrip.tex
+\keepsilent
+\askforoverwritefalse
+\preamble
+----------------------------------------------------------------
+Capiar Resume --- macros for writing resumes
+E-mail: jwrg@uvic.ca
+Released under the LGPLv3
+----------------------------------------------------------------
+
+\endpreamble
+\postamble
+
+Copyright (C) 2019 by jwrg <jwrg@uvic.ca>
+
+This work may be distributed and/or modified under the
+conditions of the GNU Lesser General Public License v3 (LGPLv3)
+
+https://www.gnu.org/licenses/lgpl-3.0.txt
+
+jwrg
+
+This work consists of the file  resume.dtx
+and the derived files           resume.ins,
+                                resume.pdf and
+                                resume.sty.
+
+\endpostamble
+\usedir{tex/latex/capiar/resume}
+\generate{
+  \file{\jobname.sty}{\from{\jobname.dtx}{package}}
+}
+%</install>
+%<install>\endbatchfile
+%<*internal>
+\usedir{source/latex/capiar/resume}
+\generate{
+  \file{\jobname.ins}{\from{\jobname.dtx}{install}}
+}
+\nopreamble\nopostamble
+\usedir{doc/latex/capiar/resume}
+\generate{
+  \file{README.txt}{\from{\jobname.dtx}{readme}}
+}
+\ifx\fmtname\nameofplainTeX
+\expandafter\endbatchfile
+\else
+\expandafter\endgroup
+\fi
+%</internal>
+%<*package>
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume}[2019/11/14 v1.0 Resume macros]
+%</package>
+%<*driver>
+\documentclass{ltxdoc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{\jobname}
+\usepackage[numbered]{hypdoc}
+\EnableCrossrefs
+\CodelineIndex
+\RecordChanges
+\begin{document}
+\DocInput{\jobname.dtx}
+\end{document}
+%</driver>
+% \fi
+%
+%\GetFileInfo{\jobname.sty}
+%
+%\title{^^A
+%  \textsf{Resume} --- Macros for resume-writing\thanks{^^A
+%    This file describes version \fileversion, last revised \filedate.^^A
+%  }^^A
+%}
+%\author{^^A
+%  jwrg\thanks{E-mail: jwrg@uvic.ca}^^A
+%}
+%\date{Released \filedate}
+%
+%\maketitle
+%
+%\changes{v1.0}{2019/11/14}{First public release}
+%
+%\section{Introduction}
+% The package provides some macros useful for writing resumes, and
+% are intended to be used in concert with Capiar's resume class.
+%
+%\section{Usage}
+% The package provides environments which are pre-formatted tables,
+% and macros which are to be used as headings for the tables.  
+%
+%\subsection{Title Table}
+% As with some other Capiar packages, this package provides a
+%\DescribeMacro{\titletable}\cs{titletable} \marg{name} \marg{address}
+% \marg{email} \marg{phone\#} which formats salient personal details
+% into a nice table to go atop the resume.
+%
+%\subsection{Headings}
+% The package provides some headings, which are to be used above
+% the provided table environments (or other simple tables), and 
+% are provided to keep formatting consistent across the document.  
+%\DescribeMacro{actionhead}\cs{actionhead} \marg{position}
+% \marg{tenure} \marg{company} \marg{location}
+% is used as a header for tables that call out work experience.
+%\DescribeMacro{actionheader}\cs{actionhead} \marg{position}
+% \marg{tenure} \marg{company} \marg{location} is used similarly,
+% except that the first argument is to be used as a section
+% heading (i.e., use this one first, then use \cs{actionhead} for
+% subsequent tables.  The heading macros
+%\DescribeMacro{actionheaddub}\cs{actionhead} \marg{position}
+% \marg{tenure} \marg{position2} \marg{tenure2} \marg{company} and
+%\DescribeMacro{actionheaderdub}\cs{actionhead} \marg{heading} 
+% \marg{position} \marg{tenure} \marg{position2} \marg{tenure2} 
+% \marg{company} \marg{location} were created to accomodate 
+% the situation whereby a person may have worked two separate 
+% tenures at the same company.
+%
+%\subsection{Tables}
+% In addition to the title table, the package provides a couple of
+% table environments to keep formatting consistent across the
+% resume document.  The first is \DescribeMacro{outlinechart}
+%\cs{outlinechart} \marg{heading}, which provides a table intended
+% to call out skills/experience across specific categories; as
+% such, the categories go in the leftmost column, and the
+% corresponding entries in the rightmost column.  The
+%\DescribeMacro{featurechart}\cs{featurechart} \marg{heading}
+% environment provides a table with an identically formatted
+% heading but the table differs in that it simply provides a
+% table with alternating \cs{raggedright} and \cs{raggedleft} 
+% columns, which can be used for a number of data 
+% (particularly for calling out one's educational credentials).
+%
+%\StopEventually{^^A
+%  \PrintChanges
+%  \PrintIndex
+%}
+%
+%\section{Implementation}
+%
+%    \begin{macrocode}
+%<*package>
+\RequirePackage{
+  capiar_colour,
+  colortbl,
+  environ,
+  tabu,
+}
+%    \end{macrocode}
+%
+%\subsection{Title Table}
+%\begin{macro}{\titletable}
+%    \begin{macrocode}
+\newcommand\titletable[4]{
+  \sffamily{
+    \begin{tabu}to \textwidth {X[l]X[c]X[r]}
+      \noalign{\global\arrayrulewidth=0.16em}
+      &	\textcolor{grey}{\huge {#1} }	
+      &	\\
+      \arrayrulecolor{purple}\hline
+      \textcolor{pink}{\small {#2} } 
+      &	\textcolor{grey}{\small \texttt{{#3}}}	 
+      &\textcolor{pink}{\small {#4} }\\
+    \end{tabu}
+  }
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%\subsection{Headings}
+%\begin{macro}{\actionhead}
+%    \begin{macrocode}
+\newcommand\actionhead[4]{
+  \begin{tabu}to \textwidth {X[l]X[r]} 
+    {#1} & {#2} \\
+    \textcolor{pink}{#3} & \textcolor{pink}{#4} \\
+  \end{tabu}
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%\begin{macro}{\actionheader}
+%    \begin{macrocode}
+\newcommand\actionheader[5]{
+  \begin{tabu}to \textwidth {X[l]X[r]} 
+    \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+    {#2} & {#3} \\
+    \textcolor{pink}{#4} & \textcolor{pink}{#5} \\
+  \end{tabu}
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%\begin{macro}{\actionheaddub}
+%    \begin{macrocode}
+\newcommand\actionheaddub[6]{
+  \begin{tabu}to \textwidth {X[l]X[r]}       
+    {#1} & {#2} \\
+    {#3} & {#4} \\
+    \textcolor{pink}{#5} & \textcolor{pink}{#6} \\
+  \end{tabu}
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%\begin{macro}{\actionheaderdub}
+%    \begin{macrocode}
+\newcommand\actionheaderdub[7]{
+  \begin{tabu}to \textwidth {X[l]X[r]}       
+    \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+    {#2} & {#3} \\
+    {#4} & {#5} \\
+    \textcolor{pink}{#6} & \textcolor{pink}{#7} \\
+  \end{tabu}
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%\subsection{Tables}
+%\begin{macro}{\featurechart}
+%    \begin{macrocode}
+\NewEnviron{featurechart}[1]{
+  \sffamily{
+    \begin{tabu}to \textwidth {X[l]X[r]}
+      \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+      \BODY
+    \end{tabu}
+  }
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%\begin{macro}{\outlinechart}
+%    \begin{macrocode}
+\NewEnviron{outlinechart}[1]{
+  \sffamily{
+    \begin{tabu}to \textwidth {XX[2.4]}
+      \textcolor{purple}{\sffamily \bfseries {#1} } & \\
+      \BODY
+    \end{tabu}
+  }
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%    \begin{macrocode}
+%</package>
+%    \end{macrocode}
+%\Finale

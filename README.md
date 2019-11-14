@@ -36,7 +36,7 @@ Capiar provides the following LaTeX packages:
 - sty/__coverletter.dtx__ (Useful commands for cover letters)
 - sty/__inscription.dtx__ (Formats text like inscriptions)
 - sty/__linguistics.dtx__ (Tables for declining/conjugating)
-- sty/__resume.sty__ (Tables and commands for resumes)
+- sty/__resume.dtx__ (Tables and commands for resumes)
 
 Also included are some Capiar-specific packages:
 
