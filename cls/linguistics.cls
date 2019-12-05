@@ -15,7 +15,7 @@
 \ProvidesClass{linguistics}[2019/11/03 Capiar Linguistics class]
 
 % Heavy lifting
-\LoadClass[10pt]{article}
+\LoadClass[twoside,9pt]{article}
 
 % Includes 
 \RequirePackage{
@@ -30,13 +30,18 @@
 \RequirePackage{capiar_colour}
 
 % Layout
-\RequirePackage{
-  geometry,     % adjust margins, portrait layout
+\RequirePackage
+{
+  geometry,     % book margins, standard book page size
 }
 
 \geometry{
-  letterpaper,		% paper size
-  margin=1.25in,	% specified independently with hmargin vmargin
+  top=0.5in,      % top margin
+  bottom=0.75in,   % bottom margin
+  inner=0.75in,   % inner margin (binding side)
+  outer=0.5in,    % outer margin (cut side)
+  paperwidth=6in,
+  paperheight=9in,
 }	
 
 % Overrides

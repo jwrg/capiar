@@ -40,6 +40,6 @@
 
 % Overrides
 \linespread{1.1}
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.45}
 
 \endinput
