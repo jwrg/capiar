@@ -4,33 +4,35 @@
 
 \begin{document}
 \pagenumbering{gobble}
+\hfill
 
 % Title page
-\inscription{\Massive DictionarivmGallovidiiLingvaeLatinae}
+\vspace{3em}
+\inscription{\massive DictionarivmGallovidiiLingvaeLatinae}
 
 \begin{center}
-  \vspace{9em}
+  \vspace{7em}
   {\Large A Concise Latin Dictionary for English-Speakers}
 
-  \vspace{9em}
+  \vspace{7em}
   \uppercase{\huge Iacomvs Gallovidivs Septimvs}
 \end{center}
 
-\pagenumbering{roman}
-\onehalfspace
-
 % Table of contents
 \newpage
+\pagenumbering{roman}
+\onehalfspace
 \tableofcontents
 
 \newpage\input{sections/preface}
 
-\pagenumbering{arabic}
-
 % Include sections
+
+\pagenumbering{arabic}
 
 \newpage\input{sections/conjugations}
 \newpage\input{sections/declensions}
+\newpage\input{sections/participles}
 
 \newpage\input{sections/verbs}
 \newpage\input{sections/nouns}
