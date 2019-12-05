@@ -74,7 +74,7 @@ linguistics.sty.
 %</internal>
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{linguistics}[2019/11/11 v1.0 Capiar Linguistics macros]
+\ProvidesPackage{linguistics}[2019/12/04 v1.1 Capiar Linguistics macros]
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
@@ -106,6 +106,7 @@ linguistics.sty.
 %\maketitle
 %
 %\changes{v1.0}{2019/11/11}{First public release}
+%\changes{v1.1}{2019/12/04}{Added environment for participles}
 %
 %\section{Introduction}
 % This package provides macros (tables mostly) useful for creating language-
@@ -174,6 +175,23 @@ linguistics.sty.
 % \marg{gender (abbr.)} \marg{declension} \marg{adjective} \marg{declension}.
 % It formats a \cs{tabu} environment in much the same way as \cs{verbchart}
 % and \cs{nounchart} but with an elaborate heading.
+%
+%\subsection{Participles \& Prepositions}
+% The package provides environments for outlining participle forms in
+% both the active and passive voice.  The \DescribeMacro{\partchart}
+% \cs{partchart} \marg{verb} provides a \cs{tabu} environment whereby the
+% columns correspond to voice, and the rows correspond to tense/aspect.
+% This usage tends to cause cells to be multi-line, which can mess up
+% the padding between cells; experiment with \cs{par} before \cs{\\\\hline}
+% or with the included \cs{padline} macro.
+%
+%\subsection{Helpers}
+% The package provides a collection of helper macros, which are used to
+% overcome certain shortcomings when using \LaTeX tables.  The 
+% \DescribeMacro{\padline} \cs{padline} macro helps overcome the poor
+% spacing ability between rows by providing a companion to \cs{hline}
+% which adds a row that appears to be padding for the row above it.
+% \textbf{NB} this macro only works for 3-column tables at the moment.
 %
 %\StopEventually{^^A
 %  \PrintChanges
@@ -359,6 +377,45 @@ linguistics.sty.
       \vspace{3em}
     }
   \end{center}
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%\begin{macro}{\partchart}
+% Set up a heading from the argument, and a table with columns
+% indicating voice, rows indicating tense/aspect.  \cs{BODY} is
+% where the user takes control, as usual.
+%    \begin{macrocode}
+\NewEnviron{partchart}[1]{
+  \begin{center}
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabu} to \textwidth {X[l]}
+      \textbf{{#1}}\\
+    \end{tabu}
+  \end{center}
+
+  \vspace{-1ex}
+  \begin{center}
+    \textsf{
+      \begin{tabu}to \textwidth {|X[c]|X[2.5,l]|X[2.5,l]|}
+        \hline
+        & \textbf{Active Voice} & \textbf{Passive Voice} \\
+        \hline
+        \BODY
+      \end{tabu}
+      \vspace{3ex}
+    }
+  \end{center}
+}
+%    \end{macrocode}
+%\end{macro}    
+%
+%\begin{macro}{\padline}
+% Pad the current row with another row before drawing an
+% \cs{hline}.  Currently for use in 3-column environments.
+%    \begin{macrocode}
+\newcommand{\padline}{
+  && \\[-1.5em] \hline
 }
 %    \end{macrocode}
 %\end{macro}
