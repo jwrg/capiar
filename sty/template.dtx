@@ -111,9 +111,9 @@ and the derived files           template.ins,
 % for, and maybe any notices about dependencies.
 %
 %\section{Usage}
-%
-%\DescribeMacro{\examplemacro}
-% Some text about an example macro called \cs{examplemacro}, which
+% The package provides a macro, \DescribeMacro{\examplemacro}
+% \cs{examplemacro} \oarg{uard} \marg{delahunty} that does stuff.
+% Some text about the example macro called \cs{examplemacro}, which
 % might have an optional argument \oarg{uard} and mandatory one
 % \marg{delahunty}.
 %
@@ -126,6 +126,8 @@ and the derived files           template.ins,
 %
 %    \begin{macrocode}
 %<*package>
+\RequirePackage{
+}
 %    \end{macrocode}
 %
 %\begin{macro}{\examplemacro}
@@ -133,11 +135,11 @@ and the derived files           template.ins,
 %    \begin{macrocode}
 \newcommand*\examplemacro[2][]{%
   Some code here, probably
-  }
-  %    \end{macrocode}
-  %\end{macro}
-  %
-  %    \begin{macrocode}
-  %</package>
-  %    \end{macrocode}
-  %\Finale
+}
+%    \end{macrocode}
+%\end{macro}
+%
+%    \begin{macrocode}
+%</package>
+%    \end{macrocode}
+%\Finale
