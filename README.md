@@ -58,11 +58,11 @@ Capiar provides the following LaTeX packages:
 - sty/__resume.dtx__ (Tables and commands for resumes)
 
 Also included are some Capiar-specific packages, for
-which no documentation is currently provided:
+which limited documentation is provided:
 
-- sty/__capiar\_preamble.sty__
-- sty/__capiar\_font.sty__
-- sty/__capiar\_colour.sty__
+- sty/__capiar\_preamble.dtx__
+- sty/__capiar\_font.dtx__
+- sty/__capiar\_colour.dtx__
 
 When writing your preamble, use one of the above classes
 and/or one or more packages.
@@ -80,7 +80,7 @@ Included in the `examples/` folder are some illustrative documents highlighting 
 cases.  The examples currently present are
 - examples/assignment/__ass14.tex__ (A school-type assignment)
 - examples/cheat/__linux\_cheat.tex__ (A rudimentary linux cheat-sheet)
-- examples/cheat/__vim\_cheat.tex__ (A non-exhausitve vim cheat-sheet)
+- examples/cheat/__vim\_cheat.tex__ (A non-exhaustive vim cheat-sheet)
 - examples/coverletter/__coverletter.tex__ (A cover letter)
 - examples/dictionary/__dictionary.tex__ (A Latin-English dictionary)
 - examples/resume/__resume.tex__ (A technical resume)
