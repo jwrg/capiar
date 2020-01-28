@@ -20,6 +20,8 @@
 \DeclareOption{arabic}{
   \newcommand{\numstyle}{\arabic}
 }
+% Default option
+\ExecuteOptions{arabic}
 \ProcessOptions\relax
 
 % Heavy lifting
