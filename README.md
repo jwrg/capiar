@@ -43,7 +43,7 @@ Capiar provides the following LaTeX classes:
 
 - cls/__assignment.cls__
 - cls/__coverletter.cls__
-- cls/__linguistics.cls__
+- cls/__dictionarium.cls__
 - cls/__reference.cls__
 - cls/__resume.cls__
 
@@ -53,8 +53,8 @@ Capiar provides the following LaTeX packages:
 
 - sty/__ceystroke.dtx__ (Keystroke-imitating "font")
 - sty/__coverletter.dtx__ (Useful commands for cover letters)
+- sty/__dictionarium.dtx__ (Tables for declining/conjugating)
 - sty/__inscription.dtx__ (Formats text like inscriptions)
-- sty/__linguistics.dtx__ (Tables for declining/conjugating)
 - sty/__resume.dtx__ (Tables and commands for resumes)
 
 Also included are some Capiar-specific packages, for
@@ -82,11 +82,13 @@ cases.  The examples currently present are
 - examples/cheat/__linux\_cheat.tex__ (A rudimentary linux cheat-sheet)
 - examples/cheat/__vim\_cheat.tex__ (A non-exhaustive vim cheat-sheet)
 - examples/coverletter/__coverletter.tex__ (A cover letter)
-- examples/dictionary/__dictionary.tex__ (A Latin-English dictionary)
 - examples/resume/__resume.tex__ (A technical resume)
 
-These are subject to frequent change, especially the dictionary, which will be
-edited often.
+The assignment example is part of a larger project that comprises an answer key for a Latin
+language course; expect the example to become a project in its own right some day.
+
+Furthermore, the following standalone projects leverage classes and packages from Capiar:
+- [Dictionarium Gallovidii Linguae Latinae](https://github.com/jwrg/dictionarium), a Latin-English dictionary
 
 Macros are (poorly) documented in the resource files in which they appear.  The examples
 may be a better way to illustrate their usage.
@@ -95,9 +97,6 @@ may be a better way to illustrate their usage.
 
 In the future, the following will be added:
 
-- Better documentation (literate style codebase)
-- More use cases: mind maps (simplifying Ti_k_Z), keyboard diagrams
+- Better documentation
+- More use cases: mind maps (simplifying Ti*k*Z), keyboard diagrams
 - More examples: formula sheet, correspondence letter
-
-It is also likely that once it gets too unwieldy, or once it needs
-release control, the dictionary will be moved to its own repository.
