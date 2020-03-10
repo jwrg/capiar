@@ -4,12 +4,12 @@
 %</internal>
 %<*readme>
 ----------------------------------------------------------------
-Capiar Linguistics macros --- macros for the linguistics class
+Capiar Dictionarium macros --- macros for the dictionarium class
 E-mail: jwrg@uvic.ca
 Released under the LGPLv3
 ----------------------------------------------------------------
 
-This macro file is a supplement for the linguistics class,
+This macro file is a supplement for the dictionarium class,
 though it can act as a standalone macro file if one wishes to
 use a different class while retaining the ability to leverage
 the table macros in this file.
@@ -27,7 +27,7 @@ the table macros in this file.
 \askforoverwritefalse
 \preamble
 ----------------------------------------------------------------
-Capiar Linguistics macros --- macros for the linguistics class
+Capiar Dictionarium macros --- macros for the dictionarium class
 E-mail: jwrg@uvic.ca
 Released under the LGPLv3
 ----------------------------------------------------------------
@@ -44,25 +44,25 @@ https://www.gnu.org/licenses/lgpl-3.0.txt
 
 jwrg
 
-This work consists of the file  linguistics.dtx
-and the derived files           linguistics.ins,
-linguistics.pdf and
-linguistics.sty.
+This work consists of the file  dictionarium.dtx
+and the derived files           dictionarium.ins,
+dictionarium.pdf and
+dictionarium.sty.
 
 \endpostamble
-\usedir{tex/latex/capiar/linguistics}
+\usedir{tex/latex/capiar/dictionarium}
 \generate{
   \file{\jobname.sty}{\from{\jobname.dtx}{package}}
 }
 %</install>
 %<install>\endbatchfile
 %<*internal>
-\usedir{source/latex/capiar/linguistics}
+\usedir{source/latex/capiar/dictionarium}
 \generate{
   \file{\jobname.ins}{\from{\jobname.dtx}{install}}
 }
 \nopreamble\nopostamble
-\usedir{doc/latex/capiar/linguistics}
+\usedir{doc/latex/capiar/dictionarium}
 \generate{
   \file{README.txt}{\from{\jobname.dtx}{readme}}
 }
@@ -74,7 +74,7 @@ linguistics.sty.
 %</internal>
 %<*package>
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{linguistics}[2019/12/04 v1.1 Capiar Linguistics macros]
+\ProvidesPackage{dictionarium}[2019/12/04 v1.1 Capiar Dictionarium macros]
 %</package>
 %<*driver>
 \documentclass{ltxdoc}
@@ -94,7 +94,7 @@ linguistics.sty.
 %\GetFileInfo{\jobname.sty}
 %
 %\title{^^A
-%  \textsf{Linguistics} --- Macros for Linguistic-related documents\thanks{^^A
+%  \textsf{Dictionarium} --- Macros for language references and linguistic-related documents\thanks{^^A
 %    This file describes version \fileversion, last revised \filedate.^^A
 %  }^^A
 %}

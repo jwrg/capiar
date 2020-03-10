@@ -6,13 +6,13 @@
 %
 % Includes:
 %
-% linguistics.sty
+% dictionarium.sty
 % capiar_font.sty
 % capiar_colour.sty (for now)
 %
 
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
-\ProvidesClass{linguistics}[2019/11/03 Capiar Linguistics class]
+\ProvidesClass{dictionarium}[2019/11/03 Capiar Dictionarium class]
 
 % Heavy lifting
 \LoadClass[twoside,9pt]{article}
@@ -20,7 +20,7 @@
 % Includes 
 \RequirePackage{
   capiar_preamble,
-  linguistics,
+  dictionarium,
 }
 
 % Fonts
